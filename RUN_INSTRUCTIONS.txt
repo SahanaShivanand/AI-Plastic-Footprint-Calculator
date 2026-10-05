@@ -1,0 +1,118 @@
+AI-BASED PLASTIC FOOTPRINT CALCULATOR
+======================================
+
+REQUIREMENTS
+------------
+1. Windows
+2. Python 3.10+ recommended
+3. VS Code
+
+STEP 1: OPEN PROJECT
+--------------------
+Extract the ZIP file.
+Open the folder "AI_Plastic_Footprint_Calculator" in VS Code.
+
+STEP 2: OPEN TERMINAL
+---------------------
+VS Code -> Terminal -> New Terminal
+
+STEP 3: INSTALL PACKAGES
+------------------------
+Run:
+
+pip install -r requirements.txt
+
+If "pip" does not work, try:
+
+python -m pip install -r requirements.txt
+
+STEP 4: TRAIN THE AI MODEL
+--------------------------
+Run:
+
+python train_model.py
+
+You should see:
+
+Training completed successfully
+Model saved as plastic_model.pkl
+
+IMPORTANT:
+Do not skip this step. It creates plastic_model.pkl.
+
+STEP 5: START THE WEBSITE
+-------------------------
+Run:
+
+python app.py
+
+You should see:
+
+* Running on http://127.0.0.1:5000
+
+STEP 6: OPEN THE WEBSITE
+------------------------
+Open Chrome and go to:
+
+http://127.0.0.1:5000
+
+STEP 7: TEST THE PROJECT
+------------------------
+Example values:
+
+Bottles: 10
+Bags: 15
+Cups: 8
+Straws: 5
+Food Packages: 12
+Disposable Plates: 4
+Shopping Packages: 5
+Containers: 6
+
+Click:
+Calculate Plastic Footprint
+
+The result page shows:
+- Monthly plastic footprint
+- Yearly plastic footprint
+- LOW / MEDIUM / HIGH category
+- Bar chart
+- Personalized suggestions
+
+TROUBLESHOOTING
+---------------
+If "No module named flask":
+    python -m pip install Flask
+
+If "No module named sklearn":
+    python -m pip install scikit-learn
+
+If "No module named joblib":
+    python -m pip install joblib
+
+If "No module named pandas":
+    python -m pip install pandas
+
+If "plastic_model.pkl not found":
+    Run:
+    python train_model.py
+
+If port 5000 is busy:
+    Close the previous Flask terminal using Ctrl+C,
+    then run:
+    python app.py
+
+PROJECT TECHNOLOGY
+------------------
+Frontend : HTML, CSS, Chart.js
+Backend  : Python Flask
+AI/ML    : Random Forest Regression
+Database : SQLite
+Dataset  : plastic_data.csv
+
+NOTE
+----
+The included CSV is a small synthetic/sample dataset for demonstrating
+the complete working pipeline. For a final academic submission, use a
+larger, properly sourced dataset and document the assumptions used to
+estimate plastic kilograms.

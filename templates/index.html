@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Plastic Footprint Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>♻️ AI-Based Plastic Footprint Calculator</h1>
+    <p class="subtitle">Calculate your monthly plastic footprint using AI</p>
+    <form action="/calculate" method="POST">
+        <label>Plastic Bottles per Month</label>
+        <input type="number" name="bottles" min="0" required>
+
+        <label>Plastic Bags per Month</label>
+        <input type="number" name="bags" min="0" required>
+
+        <label>Plastic Cups per Month</label>
+        <input type="number" name="cups" min="0" required>
+
+        <label>Plastic Straws per Month</label>
+        <input type="number" name="straws" min="0" required>
+
+        <label>Food Packages per Month</label>
+        <input type="number" name="food_packages" min="0" required>
+
+        <label>Disposable Plates per Month</label>
+        <input type="number" name="plates" min="0" required>
+
+        <label>Online Shopping Packages per Month</label>
+        <input type="number" name="shopping_packages" min="0" required>
+
+        <label>Plastic Containers per Month</label>
+        <input type="number" name="containers" min="0" required>
+
+        <button type="submit">Calculate Plastic Footprint</button>
+    </form>
+</div>
+</body>
+</html>

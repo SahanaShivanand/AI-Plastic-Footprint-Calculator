@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plastic Footprint Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>🌱 Your Plastic Footprint</h1>
+
+    <div class="result-box">
+        <h2>{{ monthly_kg }} kg/month</h2>
+        <p>Monthly Plastic Footprint</p>
+
+        <h2>{{ yearly_kg }} kg/year</h2>
+        <p>Estimated Yearly Plastic Footprint</p>
+
+        <h2>{{ category }}</h2>
+        <p>Footprint Category</p>
+    </div>
+
+    <h2>📊 Plastic Usage</h2>
+    <canvas id="plasticChart"></canvas>
+
+    <h2>💡 Personalized Suggestions</h2>
+    <ul>
+        {% for suggestion in suggestions %}
+        <li>{{ suggestion }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/"><button>Calculate Again</button></a>
+</div>
+
+<script>
+const labels = {{ labels | tojson }};
+const values = {{ values | tojson }};
+
+new Chart(document.getElementById("plasticChart"), {
+    type: "bar",
+    data: {
+        labels: labels,
+        datasets: [{
+            label: "Plastic Items per Month",
+            data: values
+        }]
+    },
+    options: { responsive: true }
+});
+</script>
+</body>
+</html>
